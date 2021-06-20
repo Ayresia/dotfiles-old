@@ -1,0 +1,36 @@
+configuration {
+	display-drun: "search > ";
+	modi: "drun";
+}
+
+* {
+	main-color: #171717;
+	secondary-color: #3d3d3d;
+
+	background-color: @main-color;
+	text-color: White;
+	transparency: "real";
+}
+
+window {
+	background-color: @main-color;
+	fullscreen: false;
+	position: center;
+	width: 35%;
+	height: 45%;
+	border: none;
+	border-radius: 15px; 
+}
+
+element, inputbar {
+	margin: 5px 10px 0px 10px;
+	padding: 10px;
+}
+
+element {
+	border-radius: 3px;
+}
+
+element selected.normal {
+	background-color: @secondary-color;
+}
