@@ -44,6 +44,8 @@ function install_required_packages() {
 	sudo pacman -Syu $PACMAN_PKGS --noconfirm;
 	yay -S $YAY_PKGS;
 	yay -Sc;
+
+	[ ! -d $HOME_DIR/.oh-my-zsh ] && sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended;
 }
 
 function create_symlink() {
@@ -62,6 +64,14 @@ function create_symlink() {
 	done
 }
 
+function setup_zsh() {
+	echo 'Setting up zsh..';
+
+	git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions;
+	git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+    chsh -s $(which zsh);
+}
+
 function clean_up() {
 	echo 'Cleaning up..';
 
@@ -74,16 +84,8 @@ function clean_up() {
 	rm -rf *.tar.gz;
 }
 
-function setup_zsh() {
-	echo 'Setting up zsh..';
-
-	[ ! -d $HOME_DIR/.oh-my-zsh ] && sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)";
-	git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions;
-	git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
-}
-
 check_updates;
 install_required_packages;
 create_symlink;
-clean_up;
 setup_zsh;
+clean_up;
