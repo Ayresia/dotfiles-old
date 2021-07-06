@@ -1,7 +1,7 @@
 #!/bin/bash
 
 HOME_DIR="/home/$USER"
-WORK_PATH="`pwd`"
+WORK_PATH=$(dirname $(realpath $0))
 
 function command_exists() {
     command -v "$@" >/dev/null 2>&1
@@ -84,8 +84,14 @@ function clean_up() {
     rm -rf *.tar.gz;
 }
 
-check_updates;
-install_required_packages;
-create_symlink;
-setup_zsh;
-clean_up;
+if [ "$WORK_PATH" == "$HOME_DIR/dotfiles" ]; then
+    cd $WORK_PATH;
+
+    check_updates;
+    install_required_packages;
+    create_symlink;
+    setup_zsh;
+    clean_up;
+else
+    echo "Make sure the dotfiles folder is located at $HOME_DIR/dotfiles";
+fi
