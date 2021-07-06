@@ -8,12 +8,14 @@ function command_exists() {
 }
 
 function check_updates() {
+    cd $HOME_DIR;
     echo 'Checking for any updates..';
 
     git pull origin master;
 }
 
 function install_required_packages() {
+    cd ~;
     echo 'Installing required packages..';
 
     local PACMAN_PKGS="
@@ -49,17 +51,15 @@ function install_required_packages() {
 }
 
 function create_symlink() {
+    cd $WORK_PATH;
     echo 'Creating symlinks..';
 
     for DIR in `find -mindepth 2 -maxdepth 2 -not -path '*/\.git/*' | cut -c3-`; do
         [ ! -d $HOME_DIR/$DIR ] && mkdir -p $HOME_DIR/$DIR;
-
-        rm -rf $HOME_DIR/$DIR;
         ln -sf $WORK_PATH/$DIR $HOME_DIR/$DIR;
     done
 
     for FILE in `find -mindepth 1 -maxdepth 1 -type f -not -path '*.sh' | cut -c3-`; do
-        rm -rf $HOME_DIR/$FILE;
         ln -sf $WORK_PATH/$FILE $HOME_DIR/$FILE;
     done
 }
