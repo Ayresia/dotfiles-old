@@ -32,7 +32,7 @@ function install_required_packages() {
         i3-gaps
         polybar-git
         neovim-nightly-bin
-        nerd-fonts-liberation-mono
+        ttf-jetbrains-mono
     "
 
     if ! command_exists yay; then
