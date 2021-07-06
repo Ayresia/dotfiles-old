@@ -48,7 +48,6 @@ function create_symlink() {
     echo 'Creating symlinks..';
 
     for DIR in `find -mindepth 2 -maxdepth 2 -not -path '*/\.git/*' | cut -c3-`; do
-        [ ! -d $HOME_DIR/$DIR ] && mkdir -p $HOME_DIR/$DIR;
         ln -sf $WORK_PATH/$DIR $HOME_DIR/$DIR;
     done
 
@@ -78,8 +77,6 @@ function clean_up() {
 }
 
 if [ "$WORK_PATH" == "$HOME_DIR/dotfiles" ]; then
-    cd $WORK_PATH;
-
     install_required_packages;
     create_symlink;
     setup_zsh;
