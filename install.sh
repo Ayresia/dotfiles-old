@@ -7,13 +7,6 @@ function command_exists() {
     command -v "$@" >/dev/null 2>&1
 }
 
-function check_updates() {
-    cd $HOME_DIR;
-    echo 'Checking for any updates..';
-
-    git pull origin master;
-}
-
 function install_required_packages() {
     cd ~;
     echo 'Installing required packages..';
@@ -87,7 +80,6 @@ function clean_up() {
 if [ "$WORK_PATH" == "$HOME_DIR/dotfiles" ]; then
     cd $WORK_PATH;
 
-    check_updates;
     install_required_packages;
     create_symlink;
     setup_zsh;
