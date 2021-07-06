@@ -71,6 +71,12 @@
   # it is recommended to set `use_thin_strokes` to `false`.
   #use_thin_strokes: true
 
+# Window configuration
+window:
+  padding:
+    x: 16
+    y: 16
+
 # Colors configuration
 
 colors:
