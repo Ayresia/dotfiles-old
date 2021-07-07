@@ -47,6 +47,11 @@ function create_symlink() {
     cd $WORK_PATH;
     echo 'Creating symlinks..';
 
+    [ ! -d "$HOME_DIR/.config" ] && mkdir -p $HOME_DIR/.config;
+    [ ! -d "$HOME_DIR/images" ] && mkdir -p $HOME_DIR/images;
+
+    rm -rf $HOME_DIR/.oh-my-zsh/custom;
+
     for DIR in `find -mindepth 2 -maxdepth 2 -not -path '*/\.git/*' | cut -c3-`; do
         ln -sf $WORK_PATH/$DIR $HOME_DIR/$DIR;
     done
