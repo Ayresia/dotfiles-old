@@ -1,6 +1,7 @@
 configuration {
 	display-drun: "search > ";
 	modi: "drun";
+    font: "JetBrains Mono 12";
 }
 
 * {
