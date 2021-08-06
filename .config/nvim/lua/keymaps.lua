@@ -1,6 +1,6 @@
 vim.g.mapleader = ' '
 
-vim.api.nvim_set_keymap("n", "<Leader>dd", ":lua require('telescope.builtin').find_files()<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<Leader>dd", ":lua require('telescope.builtin').git_files()<CR>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("i", "<CR>", 'compe#confirm("<CR>")', { noremap = true, silent = true, expr = true })
 vim.api.nvim_set_keymap("n", "gd", ":lua vim.lsp.buf.definition()<CR>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "gD", ":lua vim.lsp.buf.declaration()<CR>", { noremap = true, silent = true })
