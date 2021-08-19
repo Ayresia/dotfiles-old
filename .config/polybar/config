@@ -80,13 +80,13 @@ label-urgent-padding = 2
 
 [module/date]
 type = internal/date
-label = %date% %time%
+label = %date%
 
 ; Seconds to sleep between updates
 interval = 1.0
 
 ; Date format
-date = %m %B 
+date = %A, %d %B 
 
 [module/audio]
 type = internal/pulseaudio
