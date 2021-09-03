@@ -8,11 +8,17 @@
 # i3 config file (v4)
 #
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
+#
+
+# class                     border      background   text        indicator   child_border
+client.focused              #4c7899     #285577      #ffffff     #3d3d3d     #3d3d3d
+client.focused_inactive     #333333     #5f676a      #ffffff     #3d3d3d     #3d3d3d
+client.unfocused            #333333     #222222      #888888     #3d3d3d     #3d3d3d
 
 set $mod Mod1
 
-# removing border window incl. title 
-default_border none
+# Window border to 3px 
+default_border pixel 3 
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
