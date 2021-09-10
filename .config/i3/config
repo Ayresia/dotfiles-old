@@ -48,6 +48,12 @@ floating_modifier $mod
 # start a terminal
 bindsym $mod+Return exec alacritty 
 
+# screenshot with region
+bindsym $mod+Shift+s exec --no-startup-id "$HOME/.config/i3/scripts/screenshot.sh -s" 
+
+# screenshot whole screen 
+bindsym Print exec --no-startup-id "$HOME/.config/i3/scripts/screenshot.sh" 
+
 # kill focused window
 bindsym $mod+Shift+q kill
 
@@ -182,4 +188,4 @@ exec_always --no-startup-id picom --experimental-backends --config ~/.config/pic
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
 # executes feh in launch. 
-exec_always --no-startup-id feh --bg-scale ~/dotfiles/images/backgrounds/01.jpg
+exec_always --no-startup-id feh --bg-scale ~/dotfiles/images/backgrounds/02.png

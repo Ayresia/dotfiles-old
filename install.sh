@@ -21,6 +21,8 @@ function install_required_packages() {
         xss-lock
         feh
         zsh
+        maim
+        xclip
     "
 
     local YAY_PKGS="
