@@ -23,6 +23,7 @@ function install_required_packages() {
         zsh
         maim
         xclip
+        tmux
     "
 
     local YAY_PKGS="
