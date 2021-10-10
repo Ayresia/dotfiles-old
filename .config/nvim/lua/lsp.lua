@@ -1,6 +1,7 @@
 -- Language Servers (https://github.com/neovim/nvim-lspconfig/blob/master/CONFIG.md)
 require'lspconfig'.rust_analyzer.setup{}
 require'lspconfig'.tsserver.setup{}
+require'lspconfig'.pyright.setup{}
 require'lspconfig'.tailwindcss.setup{}
 require'lspconfig'.jsonls.setup{}
 require'lspconfig'.html.setup{}
