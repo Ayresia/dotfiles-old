@@ -9,13 +9,17 @@ if fn.empty(fn.glob(install_path)) > 0 then
 end
 
 return require('packer').startup(
-	function(use)
-		use 'wbthomason/packer.nvim'
-		use 'owozsh/Amora'
-		use 'neovim/nvim-lspconfig'
-		use 'hrsh7th/nvim-compe'
-		use 'nvim-lua/popup.nvim'
-   		use 'nvim-lua/plenary.nvim'
-    	use 'nvim-telescope/telescope.nvim'
-	end
+    function(use)
+        use 'wbthomason/packer.nvim'
+        use 'neovim/nvim-lspconfig'
+        use 'hrsh7th/nvim-cmp'
+        use 'hrsh7th/cmp-nvim-lsp'
+        use 'hrsh7th/cmp-buffer'
+        use 'hrsh7th/cmp-path'
+        use 'L3MON4D3/LuaSnip'
+        use 'saadparwaiz1/cmp_luasnip'
+        use 'nvim-lua/popup.nvim'
+        use 'nvim-lua/plenary.nvim'
+        use 'nvim-telescope/telescope.nvim'
+    end
 )
