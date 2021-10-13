@@ -1,33 +1,45 @@
--- Language Servers (https://github.com/neovim/nvim-lspconfig/blob/master/CONFIG.md)
-require'lspconfig'.rust_analyzer.setup{}
-require'lspconfig'.tsserver.setup{}
-require'lspconfig'.pyright.setup{}
-require'lspconfig'.tailwindcss.setup{}
-require'lspconfig'.jsonls.setup{}
-require'lspconfig'.html.setup{}
-require'lspconfig'.cssls.setup{}
+-- Setup nvim-cmp
+local cmp = require'cmp'
 
--- Default Compe Settings
-require'compe'.setup {
-  enabled = true;
-  autocomplete = true;
-  debug = false;
-  min_length = 1;
-  preselect = 'enable';
-  throttle_time = 80;
-  source_timeout = 200;
-  incomplete_delay = 400;
-  max_abbr_width = 100;
-  max_kind_width = 100;
-  max_menu_width = 100;
-  documentation = true;
+cmp.setup({
+    snippet = {
+      expand = function(args)
+        require("luasnip").lsp_expand(args.body)
+      end,
+    },
+    mapping = {
+      ['<C-d>'] = cmp.mapping.scroll_docs(-4),
+      ['<C-f>'] = cmp.mapping.scroll_docs(4),
+      ['<C-e>'] = cmp.mapping.close(),
+      ['<CR>'] = cmp.mapping.confirm({ select = true }),
+    },
+    sources = {
+      { name = 'nvim_lsp' },
+      { name = 'buffer' },
+      { name = 'path' },
+      { name = 'luasnip' },
+    }
+})
 
-  source = {
-    path = true;
-    buffer = true;
-    calc = true;
-    nvim_lsp = true;
-    nvim_lua = true;
-    vsnip = true;
-  };
+-- Setup lspconfig (https://github.com/neovim/nvim-lspconfig/blob/master/CONFIG.md)
+local nvim_lsp = require 'lspconfig'
+local cmp_lsp = require 'cmp_nvim_lsp'
+
+local default_settings = {
+    capabilities = 
+        cmp_lsp.update_capabilities(vim.lsp.protocol.make_client_capabilities())
 }
+
+local servers = { 
+    'rust_analyzer',
+    'tsserver',
+    'pyright',
+    'tailwindcss',
+    'jsonls',
+    'html',
+    'cssls'
+}
+
+for _, server in ipairs(servers) do
+    nvim_lsp[server].setup { default_settings }
+end
