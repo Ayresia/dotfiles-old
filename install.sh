@@ -25,6 +25,7 @@ function install_required_packages() {
         xclip
         tmux
         light
+        network-manager-applet
     "
 
     local YAY_PKGS="
