@@ -454,6 +454,11 @@ call s:h('AmoraDiffChange', s:yellow, s:none)
 call s:h('AmoraDiffText', s:bg, s:yellow)
 call s:h('AmoraDiffDelete', s:red, s:bgdark)
 
+" Nvim Cmp Highlight Groups:
+
+call s:h('CmpItemAbbr', s:fg, s:none)
+call s:h('CmpItemKind', s:red, s:none)
+
 " User Interface:
 
 set background=dark
