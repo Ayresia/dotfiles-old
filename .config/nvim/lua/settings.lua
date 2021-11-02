@@ -28,3 +28,8 @@ vim.cmd("set undofile")
 vim.cmd("set undodir=~/.config/nvim/undodir")
 vim.cmd("set shortmess+=c")
 vim.cmd("colorscheme amora")
+
+-- Presence settings
+require("presence"):setup({
+    neovim_image_text = "Neovim"
+})
