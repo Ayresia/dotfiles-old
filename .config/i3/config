@@ -18,7 +18,7 @@ client.unfocused            #333333     #222222      #888888     #3d3d3d     #3d
 set $mod Mod1
 
 # Window border to 3px 
-default_border pixel 3 
+default_border pixel 1 
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
