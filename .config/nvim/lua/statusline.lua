@@ -44,3 +44,12 @@ function render_statusline()
 end
   
 vim.o.statusline = "%!luaeval('render_statusline()')"
+
+require("fidget").setup {
+    text = {
+        spinner = "arc",
+    },
+    align = {
+        bottom = true,
+    },
+}
