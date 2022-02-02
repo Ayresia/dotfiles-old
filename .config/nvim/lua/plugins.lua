@@ -21,6 +21,7 @@ return require('packer').startup(
         use 'nvim-lua/popup.nvim'
         use 'nvim-lua/plenary.nvim'
         use 'nvim-telescope/telescope.nvim'
+        use 'j-hui/fidget.nvim'
         use 'andweeb/presence.nvim'
     end
 )
