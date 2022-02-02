@@ -32,6 +32,7 @@ local default_settings = {
 
 local servers = { 
     'rust_analyzer',
+    'csharp_ls',
     'tsserver',
     'pyright',
     'tailwindcss',
