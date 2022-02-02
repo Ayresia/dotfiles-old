@@ -33,3 +33,15 @@ vim.cmd("colorscheme amora")
 require("presence"):setup({
     neovim_image_text = "Neovim"
 })
+
+-- Telescope settings
+require("telescope").setup {
+    defaults = {
+        layout_strategy = "vertical",
+        layout_config = {
+            prompt_position = "top",
+        },
+        sorting_strategy = "ascending",
+        ignore_filename = false
+    }
+}
