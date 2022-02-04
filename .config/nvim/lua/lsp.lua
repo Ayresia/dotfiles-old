@@ -24,11 +24,10 @@ cmp.setup({
 -- Setup lspconfig (https://github.com/neovim/nvim-lspconfig/blob/master/CONFIG.md)
 local nvim_lsp = require 'lspconfig'
 local cmp_lsp = require 'cmp_nvim_lsp'
+local capabilities = vim.lsp.protocol.make_client_capabilities()
 
-local default_settings = {
-    capabilities = 
-        cmp_lsp.update_capabilities(vim.lsp.protocol.make_client_capabilities())
-}
+capabilities.textDocument.completion.completionItem.snippetSupport = true
+capabilities = cmp_lsp.update_capabilities(capabilities)
 
 local servers = { 
     'rust_analyzer',
@@ -42,5 +41,5 @@ local servers = {
 }
 
 for _, server in ipairs(servers) do
-    nvim_lsp[server].setup { default_settings }
+    nvim_lsp[server].setup { capabilities = capabilities }
 end
