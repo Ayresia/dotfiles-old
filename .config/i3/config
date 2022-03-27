@@ -188,4 +188,7 @@ exec_always --no-startup-id picom --experimental-backends --config ~/.config/pic
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
 # executes feh in launch. 
-exec_always --no-startup-id feh --bg-scale ~/dotfiles/images/backgrounds/02.png
+exec_always --no-startup-id feh --bg-scale ~/dotfiles/images/backgrounds/04.png
+
+# executes dunst in launch. 
+exec_always --no-startup-id dunst

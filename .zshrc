@@ -132,3 +132,4 @@ ZSH_HIGHLIGHT_STYLES[redirection]=fg=#fff0b8
 if [[ -z $DISPLAY ]] && [[ $(tty) = /dev/tty1 ]]; then 
 	exec startx; 
 fi
+export PATH="$PATH:$HOME/.spicetify"

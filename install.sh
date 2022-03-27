@@ -24,6 +24,7 @@ function install_required_packages() {
         maim
         xclip
         tmux
+        dunst
     "
 
     local YAY_PKGS="
