@@ -195,4 +195,7 @@ exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 exec_always --no-startup-id "$HOME/.config/i3/scripts/auto-run-nm-applet.sh"
 
 # executes feh in launch. 
-exec_always --no-startup-id feh --bg-scale ~/dotfiles/images/backgrounds/02.png
+exec_always --no-startup-id feh --bg-scale ~/dotfiles/images/backgrounds/04.png
+
+# executes dunst in launch. 
+exec_always --no-startup-id dunst

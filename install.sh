@@ -26,6 +26,7 @@ function install_required_packages() {
         tmux
         light
         network-manager-applet
+        dunst
     "
 
     local YAY_PKGS="
