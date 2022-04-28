@@ -7,12 +7,12 @@ cmp.setup({
         require("luasnip").lsp_expand(args.body)
       end,
     },
-    mapping = {
+    mapping = cmp.mapping.preset.insert({
       ['<C-d>'] = cmp.mapping.scroll_docs(-4),
       ['<C-f>'] = cmp.mapping.scroll_docs(4),
       ['<C-e>'] = cmp.mapping.close(),
       ['<CR>'] = cmp.mapping.confirm({ select = true }),
-    },
+    }),
     sources = {
       { name = 'nvim_lsp' },
       { name = 'buffer' },
@@ -39,6 +39,7 @@ local servers = {
     'html',
     'cssls'
 }
+
 
 for _, server in ipairs(servers) do
     nvim_lsp[server].setup { capabilities = capabilities }
