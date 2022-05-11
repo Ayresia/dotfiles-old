@@ -18,11 +18,15 @@ return packer.startup(
         use 'hrsh7th/cmp-path'
         use 'L3MON4D3/LuaSnip'
         use 'saadparwaiz1/cmp_luasnip'
+        use 'j-hui/fidget.nvim'
+        use 'andweeb/presence.nvim'
         use 'nvim-lua/popup.nvim'
         use 'nvim-lua/plenary.nvim'
         use 'nvim-telescope/telescope.nvim'
-        use 'j-hui/fidget.nvim'
-        use 'andweeb/presence.nvim'
+        use {
+            'nvim-treesitter/nvim-treesitter',
+            run = ':TSUpdate'
+        }
 
         if packer_bootstrap then
             packer.sync()
