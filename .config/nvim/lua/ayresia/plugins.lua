@@ -9,7 +9,7 @@ end
 local packer = require('packer')
 
 return packer.startup(
-    function(use)
+    function()
         use 'wbthomason/packer.nvim'
         use 'neovim/nvim-lspconfig'
         use 'hrsh7th/nvim-cmp'
