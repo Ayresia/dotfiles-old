@@ -1,11 +1,9 @@
 local global = vim.o
 local window = vim.wo
 
--- Window Settings
 window.relativenumber = true
 window.wrap = true
 
--- Global Settings
 global.hidden = true
 global.errorbells = false
 global.tabstop = 4
@@ -21,7 +19,7 @@ global.scrolloff = 8
 global.updatetime = 50
 global.completeopt = "menuone,noselect,noinsert"
 
--- Setting amora's colorscheme to focus (dark mode ver).
+vim.g.mapleader = ' '
 vim.g.mode = 'focus'
 
 vim.cmd("set undofile")
@@ -29,19 +27,6 @@ vim.cmd("set undodir=~/.config/nvim/undodir")
 vim.cmd("set shortmess+=c")
 vim.cmd("colorscheme amora")
 
--- Presence settings
 require("presence"):setup({
     neovim_image_text = "Neovim"
 })
-
--- Telescope settings
-require("telescope").setup {
-    defaults = {
-        layout_strategy = "vertical",
-        layout_config = {
-            prompt_position = "top",
-        },
-        sorting_strategy = "ascending",
-        ignore_filename = false
-    }
-}
