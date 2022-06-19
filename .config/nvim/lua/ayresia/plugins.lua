@@ -16,6 +16,8 @@ return packer.startup(
         use 'hrsh7th/cmp-nvim-lsp'
         use 'hrsh7th/cmp-buffer'
         use 'hrsh7th/cmp-path'
+        use 'hrsh7th/cmp-vsnip'
+        use 'hrsh7th/vim-vsnip'
         use 'j-hui/fidget.nvim'
         use 'andweeb/presence.nvim'
         use 'nvim-lua/popup.nvim'
